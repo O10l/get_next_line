@@ -26,6 +26,7 @@ char	*first_read(int fd, char *buffer)
 		rd_byte = read (fd, buff, BUFFER_SIZE);
 		if (rd_byte == -1)
 		{
+			free(buffer);
 			free (buff);
 			return (NULL);
 		}
